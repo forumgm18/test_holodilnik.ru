@@ -1,0 +1,53 @@
+// Base colors
+$base-color1            : #0595E6; // hsla(202, 96%, 46%, 1)
+$base-color2            : #F59E31; // hsla(33, 91%, 58%, 1)
+$base-color3            : #464B51; // hsla(213, 7%, 30%, 1)
+$base-color4            : #7D858C; // hsla(208, 6%, 52%, 1)
+$base-color5            : #E3E7EA; // hsla(208, 14%, 90%, 1)
+$base-color6            : #F3F3F3; // hsla(0, 0%, 95%, 1)
+$base-color7            : #ADADAD; // hsla(0, 0%, 68%, 1)
+$base-color8            : #EEEEEE; // hsla(0, 0%, 93%, 1)
+$base-color9            : #273347; // hsla(218, 29%, 22%, 1)
+
+// Burger
+$burgerW: 20px;
+$burgerH: 14px;
+$burgerLineH: 2px;
+$burgerPadding: 0px;
+
+// Font
+$mainFont                : 'PT Sans', sans-serif;
+$mainFontColor           : $base-color3;
+
+// Size
+$mainFontSize            : 20px;
+$mainFontWeight          : 400;
+$mainLineHeight          : 1;
+
+$xl          : 1920;
+$xxlg        : 1400;
+$xlg         : 1200;
+$lg          : 1024;
+$md          : 768;
+$sm          : 576;
+$xsm         : 480;
+$xxs         : 380;
+$xs          : 320;
+
+// Main color
+
+//$default-color          : #ffffff;
+$text-color              : $base-color3; //#555555;
+$text-color-light        : $base-color4; //#cccccc;
+//$logo-text-color         : #5a5a5a;
+//$warning-color           : $base-color2; //#FB4545;
+////$success-color           : #26de81;
+$danger-color            : #DD0000; // hsla(0, 100%, 43%, 1)
+//$light-color             : #999999;
+//$purple-color            : #8854d0;
+//
+//// Border Color
+//$border-base             : #DCDFE6;
+//$border-light            : #E4E7ED;
+//$border-lighter          : #EBEEF5;
+//$border-lightex          : #F2F6FC;

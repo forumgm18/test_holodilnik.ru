@@ -1,0 +1,36 @@
+.icon-brands {
+    &-bosh{
+      @include icon-size(40, 99);
+      font-size: 40px;
+    }
+    &-electrolux{
+      @include icon-size(40, 114);
+      font-size: 40px;
+    }
+    &-zugel{
+      @include icon-size(40, 112);
+      font-size: 40px;
+    }
+    &-haier{
+      @include icon-size(40, 72);
+      font-size: 40px;
+    }
+    &-hotpoint{
+      @include icon-size(40, 91);
+      font-size: 40px;
+    }
+    &-indesit{
+      @include icon-size(40, 106);
+      font-size: 40px;
+    }
+    &-lg{
+      @include icon-size(40, 73);
+      font-size: 40px;
+    }
+    &-samsung{
+      @include icon-size(40, 120);
+      font-size: 40px;
+    }
+
+  }
+  

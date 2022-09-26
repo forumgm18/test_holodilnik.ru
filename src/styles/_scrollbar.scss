@@ -1,0 +1,26 @@
+.ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y, .ps__rail-y.ps--clicking .ps__thumb-y {
+  background-color: var(--scrollbar-thumb);
+  width: 6px;
+}
+.ps__thumb-y {
+  background-color: var(--scrollbar-thumb);
+  right: 0;
+  opacity: 1;
+}
+.ps__rail-y {
+  width: 6px;
+  display: block;
+  opacity: 1;
+  // background-color: var(--scrollbar-thumb);
+  border-radius: 6px;
+}
+
+.ps--active-x > .ps__rail-x, .ps--active-y > .ps__rail-y {
+  display: block;
+  background-color: var(--scrollbar-track);
+}
+
+.ps:hover > .ps__rail-x, .ps:hover > .ps__rail-y, .ps--focus > .ps__rail-x, .ps--focus > .ps__rail-y, .ps--scrolling-x > .ps__rail-x, .ps--scrolling-y > .ps__rail-y {
+  // opacity: 0.6;
+  opacity: 1;
+}

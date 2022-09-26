@@ -1,0 +1,60 @@
+mixin header-dropdown(title, count, pos)
+  div.header-dropdown(class = pos)
+    button.header-dropdown-btn
+      span= title
+      svg.icon.icon-dropdown-arrow.icn-r <use href="/assets/icons.svg#icon-dropdown-arrow"></use>
+    div.header-dropdown-panel
+      ul.header-dropdown-list
+        - for (var i=1; i<=count; i++) {
+          li.header-dropdown-item
+            a.link(href="#") Ссылка на страницу 
+        - }    
+
+mixin menu-brand-card(d) 
+  .menu-brand-card
+    .menu-brand-card-logo
+      .img-box 
+        if d.type ==='svg'
+          svg.icon(class= d.iconClass)
+            use(href= "/assets/brands.svg" + d.iconSrc)
+        else 
+          img(class= d.iconClass src= d.iconSrc title= d.title)
+
+    .menu-brand-card-descr= d.descr
+    a.menu-brand-card-link(href= d.link)= d.linkText
+
+mixin menu-alfavit-item(d) 
+  .menu-alfavit-item
+    .menu-alfavit-item-litera= d.litera 
+    .menu-alfavit-item-list
+      each itm in d.arr 
+        a.menu-alfavit-item-link(href="#")= itm
+
+mixin menu-tabs-item(d)
+  .menu-tabs-item.menu-mobile-pane(data-tab= d.tabName data-target= d.tabName)
+    .menu-tabs-item-title= d.category
+    a.menu-link.go-back.title.menu-tabs-item-title(href="#" data-go-back= d.tabName)
+      svg.icon.icon-dropdown-arrow.prev <use href="/assets/icons.svg#icon-dropdown-arrow"></use>
+      span= d.category
+    .menu-tabs-item-section 
+      each itm, i in d.items
+        if itm.arr.length === 0
+          .menu-links-block
+            //- a.menu-link.title(href="#")= itm.title
+            a.menu-link(href="#")= itm.title
+        else 
+          .menu-links-block( )
+            a.menu-link.forward(href="#" data-tab= `${d.tabName}Sub${i}`) 
+              span= itm.title
+              svg.icon.icon-dropdown-arrow.next <use href="/assets/icons.svg#icon-dropdown-arrow"></use>
+            ul.menu-links-list.menu-mobile-pane(data-tab= `${d.tabName}Sub${i}` data-target= `${d.tabName}Sub${i}`)
+              li.menu-links
+                a.menu-link.go-back.subtitle(href="#" data-go-back= `${d.tabName}Sub${i}`)
+                  svg.icon.icon-dropdown-arrow.prev <use href="/assets/icons.svg#icon-dropdown-arrow"></use>
+                  span= itm.title
+              each lnk in itm.arr 
+                li.menu-links
+                  a.menu-link.sublink(href="#")= lnk
+
+        
+

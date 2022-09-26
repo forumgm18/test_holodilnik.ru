@@ -1,0 +1,121 @@
+@use 'sass:math';
+// px to rem
+@function rem($pixels, $context: $mainFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1rem;
+}
+// size to one line
+@mixin icon-size($height, $width: $height) {
+  // font-size:$height+px;
+  //min-width:($width/$height)+em;
+  //width:($width/$height)+em;
+  min-width:(math.div($width, $height))+em;
+  width:(math.div($width, $height))+em;
+}
+@mixin size($width,$height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+@mixin media-max-width2($breakpoint) {
+  @media screen and (max-width: $breakpoint + 'px') {
+    @content;
+  }
+}
+
+@mixin media-min-width2($breakpoint) {
+  @media screen and (min-width: $breakpoint + 'px') {
+    @content;
+  }
+}
+@mixin media-between($bp-min, $bp-max) {
+  @media screen and (min-width: $bp-min + 'px') and (max-width: $bp-max + 'px')  {
+    @content;
+  }
+}
+
+//==============================
+@function em($pixels, $context: $mainFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1em;
+}
+@mixin min-size($width, $height: $width) {
+  min-width: $width;
+  min-height: $height;
+}
+@mixin calc-width($col: "--col", $m: "--m") {
+  width: calc((100% / var(#{$col})) - 2*var(#{$m}));
+}
+//Миксин для Шрифта
+@mixin setFontBase ($fz, $fc, $fw : normal, $lh: normal, $ls: normal) {
+  font-family: $mainFont;
+  font-weight: $fw;
+  //font-size: rem($fz);
+  font-size: $fz;
+  //line-height: rem($lh);
+  line-height: $lh;
+  color: $fc;
+  letter-spacing: $ls;
+}
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$addMobSize: $addSize + $addSize * 0.7;
+	@media (max-width: 767px) {
+		font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$xl}));
+	}
+	@media (min-width: 767px) {
+		font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$xl}));
+	}
+}
+
+//================== Обрезаем единицы измерения ====================================
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    // @return $number / ($number * 0 + 1);
+    @return math.div($number , $number * 0 + 1);
+  }
+  @return $number;
+}
+//================== Адаптивный размер шрифта ====================================
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+  $f-min: strip-unit($f-min);
+  $f-max: strip-unit($f-max);
+  $w-min: strip-unit($w-min);
+  $w-max: strip-unit($w-max);
+
+  // $k: ($f-max - $f-min)/($w-max - $w-min);
+  $k: math.div($f-max - $f-min, $w-max - $w-min);
+  $b: $f-min - $k * $w-min;
+
+  $b: $b + $units;
+
+  @return calc( #{$k} * 100vw + #{$b} );
+}
+//================== Цвета ====================================
+@function baseColorOpacity1($opacity: 1) {
+  @return hsla(216, 60%, 49%, $opacity);
+}
+@function baseColorOpacity2($opacity: 1) {
+  @return hsla(23, 100%, 43%, $opacity);
+}
+@function baseColorOpacity3($opacity: 1) {
+  @return hsla(216, 41%, 23%, $opacity);
+}

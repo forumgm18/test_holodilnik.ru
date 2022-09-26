@@ -1,0 +1,84 @@
+/**
+ * «Гамбургер» превращается в «x».
+ * Берется исходное состояние, затем полоски плавно перемещаются в центр
+ * и трансформируются в «x».
+*/
+
+.burger {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: none;
+  min-width: $burgerW;
+  width: $burgerW;
+  min-height: $burgerH;
+  height: $burgerH;
+  background-color: var(--burger-bgr-color);
+
+  @include media-max-width2(1024) {display: block;}
+
+  &:focus { outline: none;}
+
+
+  &-line{
+    display: block!important;
+    position: absolute;
+    top: ($burgerH - $burgerLineH)/2;
+    left: $burgerPadding;
+    width: $burgerW;
+    height: $burgerLineH;
+    background: var(--burger-color);
+    transition: background 0.3s 0.3s;
+    border-radius: 2px;
+
+    &:before, &:after {
+      position: absolute;
+      display: block;
+      left: 0;
+      width: $burgerW;
+      height: $burgerLineH;
+      background-color: var(--burger-color);
+      content: "";
+      transition-duration: 0.3s, 0.3s;
+      transition-delay: 0.3s, 0s;
+      border-radius: 2px;
+    }
+
+    &:before {
+      top: -(($burgerH - $burgerLineH)/2 - $burgerPadding);
+      transition-property: top, transform;
+    }
+
+    &:after {
+      bottom: -(($burgerH - $burgerLineH)/2 - $burgerPadding);
+      transition-property: bottom, transform;
+    }
+  }
+
+
+  /* активное состояние, т.е. меню открыто */
+  &.open {
+    background-color: var(--burger-bgr-show);
+    .burger-line {
+      background: none;
+      transition-delay: 0s;
+
+      &:before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+
+      &:before, &:after {
+        transition-delay: 0s, 0.3s;
+        background-color: var(--burger-color);
+      }
+    }
+  }
+}

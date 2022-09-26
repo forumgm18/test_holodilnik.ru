@@ -1,0 +1,139 @@
+include ./mix/mixins
+//- - var items = ["Покупателям", "Услуги", "Бизнесу"]
+//- - var items = [{title: "Покупателям" num: Math.floor(Math.random()*10)}, {title: "Услуги" num: Math.floor(Math.random()*10)}, {title: "Бизнесу" num: Math.floor(Math.random()*10)}]
+- 
+  var items = [
+    {title: "Покупателям", num: 5, pos: 'pos-l'}, 
+    {title: "Услуги", num: 7, pos: 'pos-l'}, 
+    {title: "Бизнесу", num: 4, pos: 'pos-r'}]
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0" )
+    meta(http-equiv="x-ua-compatible" content="ie=edge" )
+    link(type="image/x-icon" rel="shortcut icon" href="assets/favicon.ico")
+    //- <link rel="preconnect" href="https://fonts.googleapis.com">
+    //- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    //- <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+    title Header holodilnik.ru
+    link(rel="stylesheet" href="/plugins/perfect-scrollbar/perfect-scrollbar.css")
+    //- script(src="/plugins/perfect-scrollbar/perfect-scrollbar.min.js")
+    //- script(src="/js/main.js")
+    base(href="/")
+
+
+  body
+    header#header.header
+      div.header-top
+        div.container.header-row
+          div.header-logo-block-wrapper
+            div.header-logo-block
+              div
+                a.header-top-link(href="#")
+                  svg.icon.icon-geo.icn-l <use href="/assets/icons.svg#icon-geo"></use>
+                  span Москва и область
+          div.header-top-middle    
+            a.header-top-link(href="#")
+              span Магазины
+            each itm in items
+              +header-dropdown(itm.title, itm.num, itm.pos)  
+
+          
+          button.header-top-link(href="#")
+            svg.icon.icon-geo.icn-l <use href="/assets/icons.svg#icon-phone"></use>
+            span Заказать звонок
+
+          a.header-top-link.last(href="tel:+74952320600") +7 (495) 232-06-00
+          
+          
+      div.header-bottom
+        div.container.header-row
+          div.header-logo-block
+            a.header-logo-link(href="/")
+              svg.icon.icon-logo <use href="/assets/icons.svg#icon-logo"></use>
+          button#btn-catalog.btn-catalog(type="button")
+            div#burger.burger
+              div.burger-line
+            span Каталог
+            
+          div.header-search
+            input#headerSInp.header-search-input(placeholder="Поиск по каталогу")
+            button#btnSearch.btn-search
+              svg.icon.icon-loupe <use href="/assets/icons.svg#icon-loupe"></use>
+            #headerSRes.header-search-results 
+              ul.header-search-results-list
+                - for(i=1; i<=8; i++)
+                  li.header-search-results-item
+                    a.header-search-results-link(href="")
+                      span= `Ссылка на результат поиска ${i}`
+
+
+
+          div.header-user-list 
+            div.header-user-item 
+              button.header-user-btn
+                svg.icon.icon-user <use href="/assets/icons.svg#icon-user"></use>
+                span Войти
+            div.header-user-item.favorit 
+              button.header-user-btn
+                svg.icon.icon-favorit <use href="/assets/icons.svg#icon-favorit"></use>
+                span Избранное  
+            div.header-user-item 
+              button.header-user-btn
+                svg.icon.icon-cart <use href="/assets/icons.svg#icon-cart"></use>
+                span Корзина
+
+      include ./chunks/header-menu
+
+    main.container 
+      p Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты. От всех, рыбного приставка журчит несколько пустился, снова всемогущая, заманивший семь меня дал то безорфографичный взгляд продолжил! Жаренные свое знаках, запятой первую оксмокс вдали силуэт жизни все меня маленький несколько рыбными составитель деревни дороге заголовок языкового курсивных? Снова составитель великий большой власти ipsum переулка рот на берегу грамматики последний. Единственное страну текстами своих, пунктуация города дал, составитель сих несколько выйти коварный агентство текст встретил рыбными раз это, гор предупредила меня возвращайся! Сих вскоре живет маленькая журчит ручеек они правилами, букв раз мир. Назад большой от всех океана подпоясал заголовок вскоре страну рыбного языком но журчит диких раз, ручеек переулка выйти маленькая использовало рыбными вопроса всеми необходимыми продолжил, встретил рот несколько строчка. Текста которое сих жизни обеспечивает большого страна, то встретил правилами путь заголовок заглавных lorem дорогу продолжил, вершину алфавит реторический коварных они выйти. Пустился эта предупредила запятых напоивший, раз вдали вершину необходимыми которой моей! Запятой дал ты пояс семь то первую, напоивший решила коварных своих текст безорфографичный маленький алфавит осталось большого языкового заглавных лучше текста она дорогу, которой наш снова инициал над. Рукопись океана напоивший языком рот взобравшись семь, всеми не заголовок запятых которой себя предупреждал домах гор, путь мир он алфавит использовало языкового до страна рукописи образ дал имеет моей? Над, заглавных текст! Имени моей, все толку страна ты предупредила имеет что инициал дороге прямо мир переписывается своего меня проектах свой пор, агентство напоивший жизни собрал. Языком, силуэт которое всемогущая имени мир, грустный на берегу над точках безорфографичный, лучше алфавит агентство пунктуация? За пояс переписывается прямо ipsum вдали сих гор текстов снова! Предупреждал, но! Пунктуация решила, возвращайся страна использовало домах рыбными семь вопрос послушавшись. Там, страну коварных имеет ручеек, но послушавшись злых свою текст, деревни мир переписывается первую гор единственное то над заглавных которой свое приставка лучше! Дороге переписали пояс несколько что даль точках предложения осталось, толку, единственное там большой по всей рукописи заглавных снова текстами мир буквоград которое маленькая повстречался. Взобравшись, рот жизни дороге единственное образ безорфографичный своих буквенных путь если, за ее своего по всей подзаголовок агентство вскоре. Снова журчит, реторический, ее, взобравшись проектах сих встретил заглавных вскоре подзаголовок возвращайся ему большой она букв моей сбить вопрос своих! Она курсивных буквенных языкового мир одна если которое, рот по всей назад он выйти, рыбными домах реторический ее меня не все? Даль оксмокс, она вершину точках вопроса за подпоясал семь буквоград вскоре страна, парадигматическая меня они маленький если букв свой проектах безорфографичный? Запятой мир строчка по всей рукопись пустился текстов страну, которой ему все продолжил города свой семь одна пор встретил деревни! За предупреждал это сбить lorem текстов скатился грустный назад все буквенных. Домах ее маленький злых моей предупреждал, даль скатился безорфографичный жаренные страну снова вскоре что пустился проектах. Себя собрал прямо пунктуация встретил жаренные, одна жизни не? Первую оксмокс, осталось его пор на берегу точках меня взобравшись диких толку даже рукопись пояс одна все послушавшись о они заголовок продолжил буквенных! Своих гор имеет силуэт языком над, до свое рекламных там решила ему единственное семь ручеек алфавит проектах большой прямо они своего! На берегу своего образ проектах вскоре вдали.
+      p Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты. От всех, рыбного приставка журчит несколько пустился, снова всемогущая, заманивший семь меня дал то безорфографичный взгляд продолжил! Жаренные свое знаках, запятой первую оксмокс вдали силуэт жизни все меня маленький несколько рыбными составитель деревни дороге заголовок языкового курсивных? Снова составитель великий большой власти ipsum переулка рот на берегу грамматики последний. Единственное страну текстами своих, пунктуация города дал, составитель сих несколько выйти коварный агентство текст встретил рыбными раз это, гор предупредила меня возвращайся! Сих вскоре живет маленькая журчит ручеек они правилами, букв раз мир. Назад большой от всех океана подпоясал заголовок вскоре страну рыбного языком но журчит диких раз, ручеек переулка выйти маленькая использовало рыбными вопроса всеми необходимыми продолжил, встретил рот несколько строчка. Текста которое сих жизни обеспечивает большого страна, то встретил правилами путь заголовок заглавных lorem дорогу продолжил, вершину алфавит реторический коварных они выйти. Пустился эта предупредила запятых напоивший, раз вдали вершину необходимыми которой моей! Запятой дал ты пояс семь то первую, напоивший решила коварных своих текст безорфографичный маленький алфавит осталось большого языкового заглавных лучше текста она дорогу, которой наш снова инициал над. Рукопись океана напоивший языком рот взобравшись семь, всеми не заголовок запятых которой себя предупреждал домах гор, путь мир он алфавит использовало языкового до страна рукописи образ дал имеет моей? Над, заглавных текст! Имени моей, все толку страна ты предупредила имеет что инициал дороге прямо мир переписывается своего меня проектах свой пор, агентство напоивший жизни собрал. Языком, силуэт которое всемогущая имени мир, грустный на берегу над точках безорфографичный, лучше алфавит агентство пунктуация? За пояс переписывается прямо ipsum вдали сих гор текстов снова! Предупреждал, но! Пунктуация решила, возвращайся страна использовало домах рыбными семь вопрос послушавшись. Там, страну коварных имеет ручеек, но послушавшись злых свою текст, деревни мир переписывается первую гор единственное то над заглавных которой свое приставка лучше! Дороге переписали пояс несколько что даль точках предложения осталось, толку, единственное там большой по всей рукописи заглавных снова текстами мир буквоград которое маленькая повстречался. Взобравшись, рот жизни дороге единственное образ безорфографичный своих буквенных путь если, за ее своего по всей подзаголовок агентство вскоре. Снова журчит, реторический, ее, взобравшись проектах сих встретил заглавных вскоре подзаголовок возвращайся ему большой она букв моей сбить вопрос своих! Она курсивных буквенных языкового мир одна если которое, рот по всей назад он выйти, рыбными домах реторический ее меня не все? Даль оксмокс, она вершину точках вопроса за подпоясал семь буквоград вскоре страна, парадигматическая меня они маленький если букв свой проектах безорфографичный? Запятой мир строчка по всей рукопись пустился текстов страну, которой ему все продолжил города свой семь одна пор встретил деревни! За предупреждал это сбить lorem текстов скатился грустный назад все буквенных. Домах ее маленький злых моей предупреждал, даль скатился безорфографичный жаренные страну снова вскоре что пустился проектах. Себя собрал прямо пунктуация встретил жаренные, одна жизни не? Первую оксмокс, осталось его пор на берегу точках меня взобравшись диких толку даже рукопись пояс одна все послушавшись о они заголовок продолжил буквенных! Своих гор имеет силуэт языком над, до свое рекламных там решила ему единственное семь ручеек алфавит проектах большой прямо они своего! На берегу своего образ проектах вскоре вдали.
+      
+      div#icons
+        svg.icon.icon-logo <use href="/assets/icons.svg#icon-logo"></use>
+        svg.icon.icon-close <use href="/assets/icons.svg#icon-close"></use>
+        svg.icon.icon-cart <use href="/assets/icons.svg#icon-cart"></use>
+        svg.icon.icon-discounted <use href="/assets/icons.svg#icon-discounted"></use>
+        svg.icon.icon-sale <use href="/assets/icons.svg#icon-sale"></use>
+        svg.icon.icon-stock <use href="/assets/icons.svg#icon-stock"></use>
+        svg.icon.icon-user <use href="/assets/icons.svg#icon-user"></use>
+        svg.icon.icon-favorite <use href="/assets/icons.svg#icon-favorite"></use>
+        svg.icon.icon-loupe <use href="/assets/icons.svg#icon-loupe"></use>
+        svg.icon.icon-audio-video <use href="/assets/icons.svg#icon-audio-video"></use>
+        svg.icon.icon-beauty <use href="/assets/icons.svg#icon-beauty"></use>
+        svg.icon.icon-climat <use href="/assets/icons.svg#icon-climat"></use>
+        svg.icon.icon-dishwasher <use href="/assets/icons.svg#icon-dishwasher"></use>
+        svg.icon.icon-dropdown-arrow <use href="/assets/icons.svg#icon-dropdown-arrow"></use>
+        svg.icon.icon-geo <use href="/assets/icons.svg#icon-geo"></use>
+        svg.icon.icon-goods4home <use href="/assets/icons.svg#icon-goods4home"></use>
+        svg.icon.icon-goods4kids <use href="/assets/icons.svg#icon-goods4kids"></use>
+        svg.icon.icon-holod <use href="/assets/icons.svg#icon-holod"></use>
+        svg.icon.icon-house-tech <use href="/assets/icons.svg#icon-house-tech"></use>
+        svg.icon.icon-inside-tech <use href="/assets/icons.svg#icon-inside-tech"></use>
+        svg.icon.icon-kitchen-stove <use href="/assets/icons.svg#icon-kitchen-stove"></use>
+        svg.icon.icon-kitchen-tech <use href="/assets/icons.svg#icon-kitchen-tech"></use>
+        svg.icon.icon-pc <use href="/assets/icons.svg#icon-pc"></use>
+        svg.icon.icon-phone <use href="/assets/icons.svg#icon-phone"></use>
+        svg.icon.icon-smart-home <use href="/assets/icons.svg#icon-smart-home"></use>
+        svg.icon.icon-smartphone <use href="/assets/icons.svg#icon-smartphone"></use>
+        svg.icon.icon-star <use href="/assets/icons.svg#icon-star"></use>
+        svg.icon.icon-sports <use href="/assets/icons.svg#icon-sports"></use>
+        svg.icon.icon-stroyka <use href="/assets/icons.svg#icon-stroyka"></use>
+        svg.icon.icon-tv <use href="/assets/icons.svg#icon-tv"></use>
+        svg.icon.icon-washing <use href="/assets/icons.svg#icon-washing"></use>
+      
+      div#icons-brand
+        svg.icon.icon-brands-bosh <use href="/assets/brands.svg#icon-brands-bosh"></use>
+        svg.icon.icon-brands-electrolux <use href="/assets/brands.svg#icon-brands-electrolux"></use>
+        svg.icon.icon-brands-zugel <use href="/assets/brands.svg#icon-brands-zugel"></use>
+        svg.icon.icon-brands-haier <use href="/assets/brands.svg#icon-brands-haier"></use>
+        svg.icon.icon-brands-hotpoint <use href="/assets/brands.svg#icon-brands-hotpoint"></use>
+        svg.icon.icon-brands-indesit <use href="/assets/brands.svg#icon-brands-indesit"></use>
+        svg.icon.icon-brands-lg <use href="/assets/brands.svg#icon-brands-lg"></use>
+        svg.icon.icon-brands-samsung <use href="/assets/brands.svg#icon-brands-samsung"></use>
+      div#root
+       
+  script(src="/plugins/perfect-scrollbar/perfect-scrollbar.min.js")
+  script(src="/js/main.js")

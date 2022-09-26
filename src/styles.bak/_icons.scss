@@ -1,0 +1,139 @@
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    //font-size: 32px;
+    font-size: inherit;
+    line-height: inherit;
+  
+    &-logo{
+      @include icon-size(45, 238);
+      // font-size: 45px;
+    //   color: #fff;
+    }
+    &-cart {
+      @include icon-size(24);
+      // font-size: 24px;
+    }
+    &-close {
+      @include icon-size(24);
+      font-size: 24px;
+    }
+    &-discounted {
+      @include icon-size(24);
+      font-size: 24px;
+      --bgc-color : #0595E6;
+      color: #fff;
+    }
+    &-sale {
+      @include icon-size(24);
+      font-size: 24px;
+      --bgc-color : #0595E6;
+      color: #fff;
+    }
+    &-stock {
+      @include icon-size(24);
+      font-size: 24px;
+      --bgc-color : #0595E6;
+      color: #fff;
+    }
+    &-user {
+      @include icon-size(24);
+      // font-size: 24px;
+    }
+    &-favorit {
+      @include icon-size(24);
+      // font-size: 24px;
+    }
+    &-loupe {
+      @include icon-size(24);
+      // font-size: 24px;
+    }
+
+    &-audio-video {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-beauty {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-climat {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-dishwasher {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-dropdown-arrow {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-geo {
+      @include icon-size(20);
+      // font-size: 20px;
+    }
+    &-goods4home {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-goods4kids {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-holod {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-house-tech {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-kitchen-stove {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-kitchen-tech {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-pc {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-phone {
+      @include icon-size(20);
+      // font-size: 20px;
+    }
+    &-smart-home {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-smartphone {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-star {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-start {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-stroyka {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-tv {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+    &-washing {
+      @include icon-size(20);
+      font-size: 20px;
+    }
+  
+  }
+  

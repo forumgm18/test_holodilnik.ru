@@ -1,0 +1,24 @@
+:root{
+  --base-color1 : #{$base-color1};
+  --base-color2 : #{$base-color2};
+  --base-color3 : #{$base-color3};
+  // --base-color8 : #{$base-color8};
+  --text-color-default: #{$text-color};
+  --link-hover-color-default: #{$base-color1};
+  --text-color-light: #{$text-color-light};
+  // --danger-color: #{$danger-color};
+  //============================
+  --burger-bgr-color: transparent;
+  --burger-bgr-show: transparent;
+  --burger-color : #fff;
+
+  //============================
+  --header-top-bgr: #{$base-color6};
+  --header-dropdown-btn-active: #{$base-color5};
+  --header-dropdown-panel-border: #{$base-color7};
+  --header-search-input-placeholder: #{$base-color7};
+  
+  --scrollbar-track: #{$base-color8};
+  --scrollbar-thumb: #{$base-color1};
+  --body-pading: 20px;
+}

@@ -1,0 +1,27 @@
+html {
+    font-family: $mainFont;
+    scroll-behavior: smooth;
+}
+.container {
+    padding-left: var(--body-pading);
+    padding-right: var(--body-pading);
+    max-width: 1510px;
+    margin-left: auto;
+    margin-right: auto;
+}
+a {
+    cursor: pointer;
+}
+.body-scroll-block {
+    padding-right: 17px;
+    overflow: hidden;
+    @include media-max-width2($lg - 1) {padding: 0;}
+}
+
+.img-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}

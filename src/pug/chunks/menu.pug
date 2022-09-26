@@ -1,0 +1,55 @@
+div.header-catalog#menuCatalog
+  .container.menu-pane 
+    #menuList.menu-list
+      #menuListScroll.menu-scroll
+        .menu-list-pane
+          ul.menu-caterories#menuCategories
+            each itm in menuList
+              if itm.type!='split'
+                li.menu-caterories-item(data-tab=itm.tabName)
+                  a.menu-caterories-link(href=itm.link)
+                    svg.icon(class=itm.icon) 
+                      use(href="/assets/icons.svg#" + itm.icon)
+                    span= itm.name 
+              else 
+                li.menu-list-splitter
+
+            li.menu-list-splitter
+            li.menu-caterories-item
+              a.menu-caterories-link(href="#")
+                svg.icon.icon-stock <use href="/assets/icons.svg#icon-stock"/>
+                span Акции
+            li.menu-caterories-item
+              a.menu-caterories-link(href="#")
+                svg.icon.icon-sale <use href="/assets/icons.svg#icon-sale"/>
+                span Распродажа
+            li.menu-caterories-item
+              a.menu-caterories-link(href="#")
+                svg.icon.icon-discounted <use href="/assets/icons.svg#icon-discounted"/>
+                span Уцененные товары
+
+    .menu-tabs
+      #menuTabsScroll.menu-scroll
+        .menu-tabs-pane#menuTabs
+          .menu-tabs-item.active(data-tab="tabFB")
+            .menu-tabs-item-title Популярные бренды
+            .menu-tabs-item-section.brands 
+              each itm in brandList
+                +menu-brand-card(itm)
+            .menu-tabs-item-section.alfavit 
+              each itm in alfaVit
+                +menu-alfavit-item(itm)
+          each tab in menuTabs      
+            +menu-tabs-item(tab)
+    .header-row
+      div.header-logo-block-wrapper
+        div.header-logo-block
+          div
+            a.header-top-link(href="#")
+              svg.icon.icon-geo.icn-l <use href="/assets/icons.svg#icon-geo"></use>
+              span Москва и область
+      div.header-top-middle    
+        a.header-top-link(href="#")
+          span Магазины
+        each itm in items
+          +header-dropdown(itm.title, itm.num, itm.pos)  
