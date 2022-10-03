@@ -10,8 +10,8 @@ module.exports = merge(common, {
   devtool: false,
   output: {
     path: paths.build,
-    publicPath: '/',
-    // publicPath: '',
+    // publicPath: '/',
+    publicPath: '',
     // filename: 'js/[name].[contenthash].bundle.js',
     filename: 'js/[name].bundle.js',
   },

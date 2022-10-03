@@ -25,7 +25,7 @@
     {type: 'svg', title: 'Samsung', iconClass: 'icon-brands-samsung', iconSrc: '#icon-brands-samsung', descr: 'Samsung — итальянский бренд крупной бытовой техники, который принадлежит', link: '#', linkText: 'Каталог «Samsung»'},
     {type: 'svg', title: 'Samsung', iconClass: 'icon-brands-samsung', iconSrc: '#icon-brands-samsung', descr: 'Samsung — итальянский бренд крупной бытовой техники, который принадлежит', link: '#', linkText: 'Каталог «Samsung digital»'},
     {type: 'svg', title: 'Haier', iconClass: 'icon-brands-haier', iconSrc: '#icon-brands-haier', descr: 'Haier — итальянский бренд крупной бытовой техники, который принадлежит', link: '#', linkText: 'Каталог «Haier»'},
-    {type: 'img', title: 'Lg', iconClass: '', iconSrc: '/assets/lg.png', descr: 'Lg — итальянский бренд крупной бытовой техники, который принадлежит', link: '#', linkText: 'Каталог «Lg»'},
+    {type: 'img', title: 'Lg', iconClass: '', iconSrc: 'assets/lg.png', descr: 'Lg — итальянский бренд крупной бытовой техники, который принадлежит', link: '#', linkText: 'Каталог «Lg»'},
     {type: 'svg', title: 'Hotpoint', iconClass: 'icon-brands-hotpoint', iconSrc: '#icon-brands-hotpoint', descr: 'Hotpoint — итальянский бренд крупной бытовой техники, который принадлежит', link: '#', linkText: 'Каталог «Hotpoint»'},
     {type: 'svg', title: 'Indesit', iconClass: 'icon-brands-indesit', iconSrc: '#icon-brands-indesit', descr: 'Indesit — итальянский бренд крупной бытовой техники, который принадлежит', link: '#', linkText: 'Каталог «Indesit»'},
     {type: 'svg', title: 'Electrolux', iconClass: 'icon-brands-electrolux', iconSrc: '#icon-brands-electrolux', descr: 'Electrolux — итальянский бренд крупной бытовой техники, который принадлежит', link: '#', linkText: 'Каталог «Electrolux»'},
@@ -83,20 +83,20 @@ div.header-catalog#menuCatalog
           div.menu-caterories-item.menu-mobile-visible()
             a.menu-link.forward.categories(href="#" data-tab="tabCatalog")
               span Каталог
-              svg.icon.icon-dropdown-arrow.next <use href="/assets/icons.svg#icon-dropdown-arrow"></use>
+              svg.icon.icon-dropdown-arrow.next <use href="assets/icons.svg#icon-dropdown-arrow"></use>
           ul#menuCategories.menu-caterories.menu-mobile-pane(data-target="tabCatalog")
             li.menu-caterories-item()
               a.menu-link.go-back.categories(href="#" data-go-back="tabCatalog")
-                svg.icon.icon-dropdown-arrow.prev <use href="/assets/icons.svg#icon-dropdown-arrow"></use>
+                svg.icon.icon-dropdown-arrow.prev <use href="assets/icons.svg#icon-dropdown-arrow"></use>
                 span Каталог
             each itm in menuList
               if itm.type!='split'
                 li.menu-caterories-item(data-tab=itm.tabName)
                   a.menu-link.forward.categories(href=itm.link data-tab=itm.tabName)
                     svg.icon(class=itm.icon) 
-                      use(href="/assets/icons.svg#" + itm.icon)
+                      use(href="assets/icons.svg#" + itm.icon)
                     span= itm.name 
-                    svg.icon.icon-dropdown-arrow.next <use href="/assets/icons.svg#icon-dropdown-arrow"></use>
+                    svg.icon.icon-dropdown-arrow.next <use href="assets/icons.svg#icon-dropdown-arrow"></use>
 
               else 
                 li.menu-list-splitter
@@ -104,20 +104,20 @@ div.header-catalog#menuCatalog
             li.menu-list-splitter
             li.menu-caterories-item
               a.menu-link.categories(href="#")
-                svg.icon.icon-stock <use href="/assets/icons.svg#icon-stock"/>
+                svg.icon.icon-stock <use href="assets/icons.svg#icon-stock"/>
                 span Акции
             li.menu-caterories-item
               a.menu-link.categories(href="#")
-                svg.icon.icon-sale <use href="/assets/icons.svg#icon-sale"/>
+                svg.icon.icon-sale <use href="assets/icons.svg#icon-sale"/>
                 span Распродажа
             li.menu-caterories-item
               a.menu-link.categories(href="#")
-                svg.icon.icon-discounted <use href="/assets/icons.svg#icon-discounted"/>
+                svg.icon.icon-discounted <use href="assets/icons.svg#icon-discounted"/>
                 span Уцененные товары
           ul.menu-mobile-visible
             li.menu-caterories-item
               a.menu-link.categories(href="#")
-                  svg.icon.icon-geo.icn-l <use href="/assets/icons.svg#icon-geo"></use>
+                  svg.icon.icon-geo.icn-l <use href="assets/icons.svg#icon-geo"></use>
                   span Москва и область
             li.menu-caterories-item
               a.menu-link.categories(href="#")
@@ -131,11 +131,11 @@ div.header-catalog#menuCatalog
               li.menu-caterories-item()
                 a.menu-link.forward.categories(href="#" data-tab=itm.tabName)
                   span= itm.title
-                  svg.icon.icon-dropdown-arrow.next <use href="/assets/icons.svg#icon-dropdown-arrow"></use>
+                  svg.icon.icon-dropdown-arrow.next <use href="assets/icons.svg#icon-dropdown-arrow"></use>
                 ul.menu-caterories.menu-mobile-pane(data-target=itm.tabName)
                   li.menu-caterories-item()
                     a.menu-link.go-back.title(href="#" data-go-back=itm.tabName)
-                      svg.icon.icon-dropdown-arrow.prev <use href="/assets/icons.svg#icon-dropdown-arrow"></use>
+                      svg.icon.icon-dropdown-arrow.prev <use href="assets/icons.svg#icon-dropdown-arrow"></use>
                       span= itm.title
                   - for(i=1; i<=itm.num; i++)    
                       li.menu-links-block
@@ -144,7 +144,7 @@ div.header-catalog#menuCatalog
 
             li.menu-caterories-item
               a.menu-link.categories(href="#")
-                svg.icon.icon-geo.icn-l <use href="/assets/icons.svg#icon-phone"></use>
+                svg.icon.icon-geo.icn-l <use href="assets/icons.svg#icon-phone"></use>
                 span Заказать звонок
             li.menu-caterories-item
               a.menu-link.categories(href="tel:+74952320600") 
@@ -156,7 +156,7 @@ div.header-catalog#menuCatalog
           .menu-tabs-item.menu-mobile-pane(data-tab="tabFB" data-target="tabFB")
             .menu-tabs-item-title Популярные бренды
             a.menu-link.go-back.title.menu-tabs-item-title(href="#" data-go-back="tabFB")
-              svg.icon.icon-dropdown-arrow.prev <use href="/assets/icons.svg#icon-dropdown-arrow"></use>
+              svg.icon.icon-dropdown-arrow.prev <use href="assets/icons.svg#icon-dropdown-arrow"></use>
               span Популярные бренды
 
             .menu-tabs-item-section.brands 

@@ -5,7 +5,6 @@ const menuTabsScroll = new PerfectScrollbar('#menuTabsScroll')
 const mobileWidth = 1024; // точка переключения в таблетку/мобилку
 
 const toggleCatalog = (e) => {
-  e.stopImmediatePropagation()
   let burger = document.getElementById('burger')
   let menuCatalog = document.getElementById('menuCatalog')
   let header = document.getElementById('header')
@@ -34,13 +33,18 @@ const toggleCatalog = (e) => {
 
 
 const bodyClick = (e) => {
+  // debugger
+  if (e.target.closest('.header-dropdown')) return
+  if (e.target.closest('.header-search')) return
+  const hdSrOpen = document.querySelector('.header-search-results.open')
+  if (hdSrOpen) hdSrOpen.classList.remove('open')
   const hdOpen = document.querySelectorAll('.header-dropdown.open')
   if (hdOpen) {
     hdOpen.forEach(el => el.classList.remove('open'))
   }
+
 }
 const headerDropdownClick = (e) => {
-  e.stopImmediatePropagation()
   const hdOpen = document.querySelectorAll('.header-dropdown.open')
   const isOpen = e.currentTarget.classList.contains('open')
   if (hdOpen) {
@@ -53,18 +57,12 @@ const headerDropdownClick = (e) => {
 }
 
 const closeMenuTab = (name = 'ALL') => {
-  // debugger
   let selectorName = name === 'ALL' ? '.active' : `[data-tab="${name}"]`
-  console.log('selectorName: ', selectorName)
-
-  // let menuCatalog = document.getElementById('menuCatalog')
-
   const activeItems = menuCatalog ? menuCatalog.querySelectorAll(selectorName) : null
   if (activeItems) activeItems.forEach(el => el.classList.remove('active'))
 }
 
 const selectMenuTab = (e) => {
-// function selectMenuTab(e) {
   if (document.documentElement.clientWidth < mobileWidth) return
   let tabName = e.target.dataset.tab
   if (!tabName) return
@@ -81,13 +79,9 @@ const selectMenuTab = (e) => {
 
 let menuMobileItemClick = (e) => {
   let tabName = e.currentTarget.dataset.tab
-  // debugger
   let currentCat = menuCatalog.querySelector(`[data-tab="${tabName}"]`)
   if (currentCat && currentCat.classList.contains('active')) return
-  // closeMenuTab() // Закрываем все вкладки
-  console.log('currentCat: ', currentCat)
   currentCat.classList.add('active') // Активируем категорию
-
   // Ищем и активируем Tab категории
   const currentTab = menuCatalog.querySelector(`[data-target="${tabName}"]`)
   console.log('currentTab: ', currentTab)
@@ -96,7 +90,6 @@ let menuMobileItemClick = (e) => {
     let menuTop = h.y + h.height
     currentTab.style.top = menuTop + 'px'
     currentTab.style.height = document.documentElement.clientHeight - menuTop + 'px'
-  
     currentTab.classList.add('active')
   }
 
@@ -116,7 +109,6 @@ let menuMobileGoBackClick = (e) => {
 
 const headerSearchInputChange = (e) => {
   const headerSRes = document.getElementById('headerSRes')
-  console.log('e.currentTarget.value.length', e.currentTarget.value.length )
   if (e.currentTarget.value.length > 2) {
     headerSRes.classList.add('open')
   } else {
@@ -124,7 +116,6 @@ const headerSearchInputChange = (e) => {
   }
 }
 const headerSearchResToggle = (e) => {
-  e.stopImmediatePropagation()
   const headerSRes = document.getElementById('headerSRes')
   if (headerSRes) {
     headerSRes.classList.toggle('open')
@@ -148,6 +139,7 @@ const btnSearch = document.getElementById('btnSearch')
 if(headerSearchInput) {
   headerSearchInput.addEventListener('change', headerSearchInputChange)
   headerSearchInput.addEventListener('keyup', headerSearchInputChange)
+  headerSearchInput.addEventListener('focus', headerSearchInputChange)
 }
 if(btnSearch) {
   btnSearch.addEventListener('click', headerSearchResToggle)

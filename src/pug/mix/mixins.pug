@@ -2,7 +2,7 @@ mixin header-dropdown(title, count, pos)
   div.header-dropdown(class = pos)
     button.header-dropdown-btn
       span= title
-      svg.icon.icon-dropdown-arrow.icn-r <use href="/assets/icons.svg#icon-dropdown-arrow"></use>
+      svg.icon.icon-dropdown-arrow.icn-r <use href="assets/icons.svg#icon-dropdown-arrow"></use>
     div.header-dropdown-panel
       ul.header-dropdown-list
         - for (var i=1; i<=count; i++) {
@@ -16,7 +16,7 @@ mixin menu-brand-card(d)
       .img-box 
         if d.type ==='svg'
           svg.icon(class= d.iconClass)
-            use(href= "/assets/brands.svg" + d.iconSrc)
+            use(href= "assets/brands.svg" + d.iconSrc)
         else 
           img(class= d.iconClass src= d.iconSrc title= d.title)
 
@@ -34,7 +34,7 @@ mixin menu-tabs-item(d)
   .menu-tabs-item.menu-mobile-pane(data-tab= d.tabName data-target= d.tabName)
     .menu-tabs-item-title= d.category
     a.menu-link.go-back.title.menu-tabs-item-title(href="#" data-go-back= d.tabName)
-      svg.icon.icon-dropdown-arrow.prev <use href="/assets/icons.svg#icon-dropdown-arrow"></use>
+      svg.icon.icon-dropdown-arrow.prev <use href="assets/icons.svg#icon-dropdown-arrow"></use>
       span= d.category
     .menu-tabs-item-section 
       each itm, i in d.items
@@ -46,11 +46,11 @@ mixin menu-tabs-item(d)
           .menu-links-block( )
             a.menu-link.forward(href="#" data-tab= `${d.tabName}Sub${i}`) 
               span= itm.title
-              svg.icon.icon-dropdown-arrow.next <use href="/assets/icons.svg#icon-dropdown-arrow"></use>
+              svg.icon.icon-dropdown-arrow.next <use href="assets/icons.svg#icon-dropdown-arrow"></use>
             ul.menu-links-list.menu-mobile-pane(data-tab= `${d.tabName}Sub${i}` data-target= `${d.tabName}Sub${i}`)
               li.menu-links
                 a.menu-link.go-back.subtitle(href="#" data-go-back= `${d.tabName}Sub${i}`)
-                  svg.icon.icon-dropdown-arrow.prev <use href="/assets/icons.svg#icon-dropdown-arrow"></use>
+                  svg.icon.icon-dropdown-arrow.prev <use href="assets/icons.svg#icon-dropdown-arrow"></use>
                   span= itm.title
               each lnk in itm.arr 
                 li.menu-links

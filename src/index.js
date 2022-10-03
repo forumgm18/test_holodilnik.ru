@@ -5,4 +5,4 @@ import '@/styles/index.scss'
 // const menuListScroll = new PerfectScrollbar('#menuListScroll')
 // const menuTabsScroll = new PerfectScrollbar('#menuTabsScroll')
 
-import '@/js/main'
+// import '@/js/main'
